@@ -45,6 +45,7 @@
     <header class="bg-[#f8f5ff]/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
+                <img src="White-logo-on-Plum (1) (1).png" alt="My Logo" width="150" class="h-10 mr-3">
                 <h1 class="text-xl md:text-2xl font-bold text-[#702efc]">AI Enablement Strategy</h1>
                 <nav class="hidden md:flex space-x-8">
                     <a href="#gantt" class="nav-link font-medium text-gray-600 py-1">Timeline</a>
@@ -348,68 +349,4 @@
                     y: {
                         ticks: {
                             color: '#3d3d3d',
-                            callback: function(value, index, ticks) {
-                                const label = this.getLabelForValue(value);
-                                if (label.length > 16) {
-                                    return label.split(' ').reduce((acc, word) => {
-                                        if (acc.length === 0 || acc[acc.length - 1].length + word.length + 1 > 16) {
-                                            acc.push(word);
-                                        } else {
-                                            acc[acc.length - 1] += ' ' + word;
-                                        }
-                                        return acc;
-                                    }, []);
-                                }
-                                return label;
-                            }
-                        },
-                        grid: {
-                            color: '#e0dcd7' /* A light gray for grid lines */
-                        }
-                    }
-                },
-                onClick: (event, elements) => {
-                    if (elements.length > 0) {
-                        const index = elements[0].index;
-                        const sectionId = phases[index].sectionId;
-                        document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
-                    }
-                }
-            }
-        });
-
-        const navLinks = document.querySelectorAll('.nav-link');
-        const sections = document.querySelectorAll('main section');
-
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.3 /* Adjust threshold to control when active state changes */
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                const navLink = document.querySelector(`a[href="#${entry.target.id}"]`);
-                if (navLink) {
-                    if (entry.isIntersecting) {
-                        navLinks.forEach(link => link.classList.remove('active'));
-                        navLink.classList.add('active');
-                    }
-                }
-            });
-        }, observerOptions);
-
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = e.target.getAttribute('href').substring(1);
-                document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-    </script>
-</body>
-</html>
+                            callback: function(val
