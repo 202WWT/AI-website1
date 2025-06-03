@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Enablement Strategy Plan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f7f4;
+            color: #3d3d3d;
+        }
+        .nav-link {
+            transition: color 0.3s ease, border-color 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-link.active, .nav-link:hover {
+            color: #0d9488; /* teal-600 */
+            border-bottom-color: #0d9488;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 40vh;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 450px;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <h1 class="text-xl md:text-2xl font-bold text-teal-700">AI Enablement Strategy</h1>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#gantt" class="nav-link font-medium text-gray-600 py-1">Timeline</a>
+                    <a href="#phase1" class="nav-link font-medium text-gray-600 py-1">Phase 1</a>
+                    <a href="#phase2" class="nav-link font-medium text-gray-600 py-1">Phase 2</a>
+                    <a href="#phase3" class="nav-link font-medium text-gray-600 py-1">Phase 3</a>
+                    <a href="#phase4" class="nav-link font-medium text-gray-600 py-1">Phase 4</a>
+                    <a href="#considerations" class="nav-link font-medium text-gray-600 py-1">Considerations</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        <section id="intro" class="text-center mb-12 md:mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">A Phased Approach to AI Transformation</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-600">
+                This interactive plan outlines our strategy to systematically identify, evaluate, and implement AI solutions. The goal is to free up employee time for high-impact, strategic initiatives, demonstrating tangible business value at every stage.
+            </p>
+        </section>
+
+        <section id="gantt" class="mb-12 md:mb-20 scroll-mt-20">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-2">Project Timeline Overview</h2>
+             <p class="text-center text-gray-500 mb-8">This chart shows the estimated duration for each phase. Click on a bar to jump to the phase details.</p>
+            <div class="bg-white p-4 sm:p-6 rounded-xl shadow-lg">
+                <div class="chart-container">
+                    <canvas id="ganttChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <div class="space-y-16 md:space-y-24">
+            <section id="phase1" class="scroll-mt-20">
+                <div class="text-center mb-10">
+                    <span class="text-sm font-semibold uppercase tracking-wider text-teal-600">Weeks 1-4</span>
+                    <h2 class="text-3xl font-bold mt-2">Phase 1: Foundation & Discovery</h2>
+                    <p class="max-w-2xl mx-auto mt-4 text-gray-600">Establish the strategic foundation, define success, and assemble the core team to initiate the AI enablement journey.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="font-bold text-lg mb-2">1.1 Define Vision & Success Metrics</h3>
+                        <p class="text-gray-600 text-sm">Collaborate with leadership to articulate a clear vision for AI and establish high-level success metrics (qualitative and quantitative).</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="font-bold text-lg mb-2">1.2 Form AI Enablement Core Team</h3>
+                        <p class="text-gray-600 text-sm">Recruit a small, cross-functional team including representatives from IT, HR, and business analysis.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="font-bold text-lg mb-2">1.3 Kick-off Meeting</h3>
+                        <p class="text-gray-600 text-sm">Communicate the initiative, explain the vision and phased approach, and solicit buy-in from key stakeholders.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="font-bold text-lg mb-2">1.4 Initial Process Inventory</h3>
+                        <p class="text-gray-600 text-sm">Gather the leader's list of potential processes and begin preliminary categorization (e.g., high-volume, data-intensive).</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="font-bold text-lg mb-2">1.5 Conduct Initial Interviews</h3>
+                        <p class="text-gray-600 text-sm">Hold informal interviews with department leaders to get a high-level understanding of challenges and opportunities.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="phase2" class="scroll-mt-20">
+                <div class="text-center mb-10">
+                    <span class="text-sm font-semibold uppercase tracking-wider text-teal-600">Weeks 5-12</span>
+                    <h2 class="text-3xl font-bold mt-2">Phase 2: Deep Dive & Opportunity Assessment</h2>
+                    <p class="max-w-2xl mx-auto mt-4 text-gray-600">Conduct thorough analyses of current processes, quantify pain points, assess data readiness, and prioritize AI opportunities based on feasibility and impact.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="font-bold text-lg mb-2">2.1 Stakeholder Workshops</h3>
+                        <p class="text-gray-600 text-sm">Plan and schedule discovery workshops with process owners and individual contributors to map current state and pain points.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="font-bold text-lg mb-2">2.2 Process Mapping & Quantification</h3>
+                        <p class="text-gray-600 text-sm">Map "as-is" processes and quantify pain points like time spent, error rates, and costs.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="font-bold text-lg mb-2">2.3 Data Assessment & Readiness</h3>
+                        <p class="text-gray-600 text-sm">Evaluate the data landscape for each process, including availability, quality, and accessibility.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="font-bold text-lg mb-2">2.4 AI Feasibility & Impact Assessment</h3>
+                        <p class="text-gray-600 text-sm">Assess which AI technologies could address pain points and evaluate the potential impact and technical feasibility.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="font-bold text-lg mb-2">2.5 Prioritize Opportunities</h3>
+                        <p class="text-gray-600 text-sm">Prioritize opportunities based on business impact, AI feasibility, employee impact, and potential for quick wins.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="phase3" class="scroll-mt-20">
+                <div class="text-center mb-10">
+                     <span class="text-sm font-semibold uppercase tracking-wider text-teal-600">Months 4-6</span>
+                    <h2 class="text-3xl font-bold mt-2">Phase 3: Pilot & Iterate</h2>
+                    <p class="max-w-2xl mx-auto mt-4 text-gray-600">Implement selected pilot projects, demonstrate value, manage change, and gather learnings for future scaling.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                     <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="font-bold text-lg mb-2">3.1 Select Pilot Projects</h3>
+                        <p class="text-gray-600 text-sm">Select 1-3 high-impact, high-feasibility pilot projects to act as "lighthouses" to demonstrate clear value.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="font-bold text-lg mb-2">3.2 Solution Design & Evaluation</h3>
+                        <p class="text-gray-600 text-sm">Design the AI solution for each pilot and evaluate potential vendors or technologies.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="font-bold text-lg mb-2">3.3 Pilot Implementation</h3>
+                        <p class="text-gray-600 text-sm">Implement the AI solution in a controlled environment, focusing on agile development and iteration.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="font-bold text-lg mb-2">3.4 Change Management & Training</h3>
+                        <p class="text-gray-600 text-sm">Develop and execute a robust change management plan, including targeted employee training and upskilling.</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="font-bold text-lg mb-2">3.5 Monitor, Measure & Learn</h3>
+                        <p class="text-gray-600 text-sm">Continuously monitor performance against success metrics and gather feedback for refinement.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="phase4" class="scroll-mt-20">
+                <div class="text-center mb-10">
+                    <span class="text-sm font-semibold uppercase tracking-wider text-teal-600">Ongoing</span>
+                    <h2 class="text-3xl font-bold mt-
